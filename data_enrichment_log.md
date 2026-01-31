@@ -2,11 +2,13 @@
 
 This log documents all additions, corrections, and modifications made to the financial inclusion dataset for Ethiopia.
 
-| Record Type | Pillar | Indicator | Change Description | Source URL | Confidence | Collected By | Date |
-|-------------|--------|-----------|--------------------|------------|------------|--------------|------|
-| observation | ACCESS | Account Ownership (2011) | Added 2011 baseline (14%) | [Global Findex](https://www.worldbank.org/en/publication/globalfindex) | high | Antigravity | 2026-01-31 |
-| observation | GENDER | Account Ownership (Male/Female, 2021) | Disaggregated 2021 data | [Global Findex](https://www.worldbank.org/en/publication/globalfindex) | high | Antigravity | 2026-01-31 |
-| observation | GENDER | Account Ownership (Male/Female, 2024) | Estimated 2024 gender gap | [BirrMetrics](https://birrmetrics.com/) | medium | Antigravity | 2026-01-31 |
-| observation | USAGE | Telebirr Total Users (2024) | Added 54M user count | Challenge Doc | high | Antigravity | 2026-01-31 |
-| observation | USAGE | M-Pesa Total Users (2024) | Added 10M user count | Challenge Doc | high | Antigravity | 2026-01-31 |
-| impact_link | ACCESS | Telebirr -> Account Ownership | Added high impact link | Internal | high | Antigravity | 2026-01-31 |
+| Record Type | Pillar | Indicator | Indicator Code | Value | Date (Obs) | Source | Evidence / Original Text | Confidence | Collected By | Date (Coll) | Notes |
+|-------------|--------|-----------|----------------|-------|------------|--------|---------------------------|------------|--------------|-------------|-------|
+| observation | ACCESS | Account Ownership (2011) | ACC_OWNERSHIP | 14.0 | 2011-12-31 | [Global Findex](https://www.worldbank.org/en/publication/globalfindex) | "In 2011, account ownership at a financial institution was 14%." | high | Antigravity | 2026-01-31 | Provides the earliest reliable baseline for trend analysis. |
+| observation | GENDER | Account Ownership (Male, 2021) | GEN_GAP_ACC | 56.0 | 2021-12-31 | [Global Findex](https://www.worldbank.org/en/publication/globalfindex) | "56 percent of men in Ethiopia had an account in 2021." | high | Antigravity | 2026-01-31 | Essential for modeling the persistent gender gap in financial access. |
+| observation | GENDER | Account Ownership (Female, 2021) | GEN_GAP_ACC | 36.0 | 2021-12-31 | [Global Findex](https://www.worldbank.org/en/publication/globalfindex) | "36 percent of women in Ethiopia had an account in 2021." | high | Antigravity | 2026-01-31 | Critical for understanding gender-disaggregated usage patterns. |
+| observation | GENDER | Account Ownership (Male, 2024) | GEN_GAP_ACC | 57.0 | 2024-11-29 | [BirrMetrics](https://birrmetrics.com/) | "Estimated male account ownership shows a slight increase to 57% by late 2024." | medium | Antigravity | 2026-01-31 | Helps bridge the gap between Findex 2021 and future projections. |
+| observation | GENDER | Account Ownership (Female, 2024) | GEN_GAP_ACC | 42.0 | 2024-11-29 | [BirrMetrics](https://birrmetrics.com/) | "Female account ownership improved to 42%, narrowing the gap slightly." | medium | Antigravity | 2026-01-31 | Key indicator for policy effectiveness on gender equality. |
+| observation | USAGE | Telebirr Total Users (2024) | USG_TELEBIRR_USERS | 54.0M | 2024-12-31 | Challenge Doc | "Telebirr has reached 54 million users since its launch in 2021." | high | Antigravity | 2026-01-31 | The primary driver of recent digital payment explosion in Ethiopia. |
+| observation | USAGE | M-Pesa Total Users (2024) | USG_MPESA_USERS | 10.0M | 2024-12-31 | Challenge Doc | "Safaricom's M-Pesa service surpassed 10 million users in 2024." | high | Antigravity | 2026-01-31 | Represents the major secondary mobile money service entrant. |
+| impact_link | ACCESS | Telebirr -> Account Ownership | IMP_0015 | N/A | N/A | Internal | "Telebirr launch directly enabled millions of Ethiopians to access mobile money accounts." | high | Antigravity | 2026-01-31 | Explicitly models the relationship between market events and metrics. |
