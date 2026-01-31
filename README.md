@@ -16,13 +16,24 @@ The project is structured to ensure scalability, reproducibility, and clarity in
 
 ```text
 ├── data/
-│   ├── raw/             # Original datasets and reference codes
-│   └── processed/       # Sanitized and enriched data for modeling
-├── notebooks/           # Experimental analysis and task-specific discovery
-├── src/                 # Modular Python scripts for data processing and enrichment
+│   ├── raw/             # Original datasets (local-only)
+│   └── processed/       # Sanitized and enriched data
+├── notebooks/           # Experimental analysis and discovery
+├── src/                 # Modular Python scripts for data processing
 ├── reports/             # Formal documentation and visualization assets
 ├── dashboard/           # Streamlit application for interactive results
 └── requirements.txt     # Dependency management
+
+---
+
+## Data Architecture: Unified Format v2
+
+The core design principle is **interpretive neutrality**. We do not force static pillars onto dynamic events. Instead, we use `impact_link` records to map event effects across multiple dimensions (Access, Usage, etc.) without bias.
+
+### Design Matrix
+- **Observations/Targets**: Explicitly assigned to a `pillar`.
+- **Events**: Kept neutral (`pillar` is empty); type is defined by `category`.
+- **Impact Links**: Connect events to indicators; `pillar` is inherited from the affected indicator.
 ```
 
 ---
