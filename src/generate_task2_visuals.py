@@ -71,14 +71,15 @@ def section2_access_analysis():
     gender_df = df[df['indicator_code'] == 'GEN_GAP_ACC'].copy()
     if not gender_df.empty:
         # Filter for indicators containing 'Male' or 'Female'
-        males = gender_df[gender_df['indicator'].str.contains('Male', case=False)].copy()
+        males = gender_df[gender_df['indicator'].str.contains(r'\bMale\b', case=False, regex=True)].copy()
         females = gender_df[gender_df['indicator'].str.contains('Female', case=False)].copy()
         
         males['gender'] = 'Male'
         females['gender'] = 'Female'
         
         gender_combined = pd.concat([males, females])
-        gender_combined['year'] = pd.to_datetime(gender_combined['observation_date']).dt.year
+        gender_combined['year'] = pd.to_datetime(gender_combined['observation_date'], errors='coerce').dt.year
+        gender_combined = gender_combined.dropna(subset=['year', 'value_numeric'])
         
         plt.figure(figsize=(10, 6))
         sns.barplot(data=gender_combined, x='year', y='value_numeric', hue='gender', palette='RdBu')
