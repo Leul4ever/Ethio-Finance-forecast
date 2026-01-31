@@ -23,6 +23,27 @@ The project is structured to ensure scalability, reproducibility, and clarity in
 ├── reports/             # Formal documentation and visualization assets
 ├── dashboard/           # Streamlit application for interactive results
 └── requirements.txt     # Dependency management
+
+---
+
+## Data Architecture: Unified Format v2
+
+The core design principle of this project is **interpretive neutrality**. We do not force static pillars onto dynamic events.
+
+### Record Interpretation Rules
+
+| Record Type | Category Column | Pillar Column |
+| :--- | :--- | :--- |
+| **Observation** | Empty | **Required**: The dimension being measured (Access, Usage, etc.) |
+| **Target** | Empty | **Required**: The dimension targeted by policy. |
+| **Event** | **Event Type**: (policy, product_launch, e.t.c.) | **Empty**: Prevents interpretive bias. |
+| **Impact Link** | Empty | **Required**: Inherited from the affected indicator. |
+
+### How Modeling Works
+
+Instead of tagging a "Telebirr Launch" as only `USAGE`, we leave the event neutral and use `impact_link` records to map its effects across multiple dimensions simultaneously (e.g., Access and Usage).
+
+---
 ```
 
 ---

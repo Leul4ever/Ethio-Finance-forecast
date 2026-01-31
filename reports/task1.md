@@ -7,7 +7,7 @@ Task 1 focused on the foundational layer of the Ethiopia Financial Inclusion For
 
 ## 1. Methodology & Approach
 Our exploration was driven by three core pillars:
-1.  **Structural Integrity**: Validating the unified schema where Observations, Events, and Targets coexist.
+1.  **V2 Schema Compliance**: Applying the "Non-Biased Event Modeling" principle where events are kept pillar-neutral, using relational `impact_links` instead.
 2.  **Gap Assessment**: Identifying temporal and indicator-specific data density issues.
 3.  **Contextual Enrichment**: Leveraging authoritative sources (Global Findex, Operator Reports) to bridge identified gaps.
 
