@@ -88,9 +88,15 @@ Instead of tagging a "Telebirr Launch" as only `USAGE`, we leave the event neutr
 
 ## Roadmap
 
-- **Task 2**: Exploratory Data Analysis (EDA) - Deep dive into trends and correlations.
-- **Task 3**: Baseline Modeling - Time-series forecasting for key indicators.
-- **Task 4**: Simulation & Policy Analysis - Impact assessment of Digital ID and Mobile Money.
+- ✅ **Task 1**: Data Discovery & Enrichment - COMPLETED
+- ✅ **Task 2**: Exploratory Data Analysis (EDA) - COMPLETED
+  - Comprehensive analysis of 50 unified data points
+  - Identified 15% gender gap and +3pp growth slowdown puzzle
+  - Generated 5 testable hypotheses for impact modeling
+  - Full report: `reports/task2.md`
+- **Task 3**: Impact Modeling & Hypothesis Testing - IN PROGRESS
+- **Task 4**: Forecasting & Simulation - PLANNED
+- **Task 5**: Policy Recommendations & Dashboard - PLANNED
 
 ---
 
