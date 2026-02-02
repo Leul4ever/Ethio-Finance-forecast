@@ -84,6 +84,23 @@ Instead of tagging a "Telebirr Launch" as only `USAGE`, we leave the event neutr
    pip install -r requirements.txt
    ```
 
+## 🚀 Financial Inclusion Dashboard
+
+A premium, interactive dashboard built with **Streamlit** and **Plotly** to visualize Ethiopia's financial inclusion trajectories (2011-2027).
+
+### How to Run
+1. Ensure all dependencies are installed: `pip install -r requirements.txt`
+2. Launch the dashboard from the project root:
+   ```bash
+   streamlit run dashboard/app.py
+   ```
+
+### Dashboard Features
+- **Executive Overview**: High-level KPIs and progress tracking.
+- **Trend Explorer**: Multifilter time-series analyzer for 10+ indicators.
+- **Forecast Simulator**: Interactive 2025-2027 projections with scenario switching (Optimistic/Base/Pessimistic).
+- **Impact Matrix**: Quantitative evidence and confidence scores for policy reforms.
+
 ---
 
 ## Roadmap
@@ -94,9 +111,9 @@ Instead of tagging a "Telebirr Launch" as only `USAGE`, we leave the event neutr
   - Identified 15% gender gap and +3pp growth slowdown puzzle
   - Generated 5 testable hypotheses for impact modeling
   - Full report: `reports/task2.md`
-- **Task 3**: Impact Modeling & Hypothesis Testing - IN PROGRESS
-- **Task 4**: Forecasting & Simulation - PLANNED
-- **Task 5**: Policy Recommendations & Dashboard - PLANNED
+- ✅ **Task 3**: Impact Modeling & Hypothesis Testing - COMPLETED
+- ✅ **Task 4**: Forecasting & Simulation - COMPLETED
+- ✅ **Task 5**: Policy Recommendations & Dashboard - COMPLETED
 
 ---
 
