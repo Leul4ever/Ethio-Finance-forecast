@@ -27,7 +27,7 @@ def load_data():
     return None
 
 def main():
-    st.title("📈 Historical Trend Explorer")
+    st.title("Historical Trend Explorer")
     st.markdown("Perform a deep dive into historical indicators across Access, Usage, and Infrastructure pillars.")
 
     df = load_data()

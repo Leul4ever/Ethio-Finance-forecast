@@ -29,7 +29,7 @@ def load_data():
     return unified_df, forecast_df
 
 def main():
-    st.title("📊 Executive Overview")
+    st.title("Executive Overview")
     st.markdown("Current status and strategic indicators of Ethiopia's financial landscape.")
 
     try:

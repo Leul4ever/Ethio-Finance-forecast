@@ -78,7 +78,6 @@ def load_data(file_path):
     return None
 
 def main():
-    st.sidebar.image("https://www.flaticon.com/free-icons/finance", width=60) # Placeholder for logo
     st.sidebar.title("Navigation")
     st.sidebar.info("Select a page above to explore different aspects of the analysis.")
     
@@ -101,7 +100,8 @@ def main():
         Mobile Money and digital reforms in the Ethiopian market.
         """)
         
-        st.button("Explore Trends", key="hero_btn")
+        if st.button("Explore Trends", key="hero_btn"):
+            st.switch_page("pages/02_Trends.py")
         
     with col2:
         # A simple visual highlight or key fact
@@ -118,15 +118,15 @@ def main():
     nav_col1, nav_col2, nav_col3 = st.columns(3)
     
     with nav_col1:
-        st.markdown("#### 🔍 Historical Depth")
+        st.markdown("#### Historical Depth")
         st.write("Explore 10+ years of access and usage data refined from multiple global sources.")
         
     with nav_col2:
-        st.markdown("#### ⚡ Event Modeling")
+        st.markdown("#### Event Modeling")
         st.write("Understand how Telebirr, Safaricom, and FX reforms shifted the baseline.")
         
     with nav_col3:
-        st.markdown("#### 🎯 2027 Projections")
+        st.markdown("#### 2027 Projections")
         st.write("Simulate Optimistic and Base-case scenarios for universal account ownership.")
 
 if __name__ == "__main__":

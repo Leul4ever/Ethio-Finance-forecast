@@ -23,7 +23,7 @@ def load_impact_data():
     return None
 
 def main():
-    st.title("⚡ Policy & Event Impact Matrix")
+    st.title("Policy & Event Impact Matrix")
     st.markdown("Quantifying the disruptive causal links between reforms and inclusion outcomes.")
 
     links_df = load_impact_data()

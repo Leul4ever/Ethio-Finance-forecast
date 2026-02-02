@@ -25,7 +25,7 @@ def load_forecast_data():
     return None, None
 
 def main():
-    st.title("🎯 2025-2027 Financial Projections")
+    st.title("2025-2027 Financial Projections")
     st.markdown("Explore event-augmented forecast scenarios and the roadmap to universal financial access.")
 
     forecast_df, hist_df = load_forecast_data()
