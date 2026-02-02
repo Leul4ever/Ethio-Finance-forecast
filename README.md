@@ -1,122 +1,98 @@
 # Ethiopia Financial Inclusion Forecasting
 
-An advanced analytics and AI-driven forecasting project designed to model, predict, and optimize financial inclusion pathways in Ethiopia. This project leverages historical survey data, significant market events, and policy targets to provide actionable insights for a more inclusive financial ecosystem.
+An advanced analytics framework designed to model, simulate, and project financial inclusion pathways in Ethiopia from 2011 to 2027. This project integrates World Bank Findex historical data with proprietary Event Impact Modeling to provide high-fidelity insights into national digital transformation.
 
 ---
 
-## Project Overview
+## Strategic Vision
 
-Financial inclusion is a cornerstone of economic development. In Ethiopia, the landscape is rapidly evolving with the entry of mobile money operators like Telebirr and M-Pesa, alongside the implementation of the Fayda Digital ID system. This repository houses the data pipeline, exploratory analysis, and forecasting models used to estimate the impact of these disruptions on Access and Usage metrics.
+Financial inclusion is the bedrock of Ethiopia's economic modernization. This repository provides a rigorous, data-driven methodology to quantify the disruptive effects of mobile money entry (Telebirr, Safaricom M-Pesa) and foundational digital identity (Fayda) on the national financial ecosystem.
 
 ---
 
 ## Technical Architecture
 
-The project is structured to ensure scalability, reproducibility, and clarity in the data-to-insight pipeline.
+The project maintains a modular structure to ensure reproducibility and scalability across the data-to-insight pipeline.
 
 ```text
 ├── data/
-│   ├── raw/             # Original datasets (local-only)
-│   └── processed/       # Sanitized and enriched data
-├── notebooks/           # Experimental analysis and discovery
-├── src/                 # Modular Python scripts for data processing
-├── reports/             # Formal documentation and visualization assets
-├── dashboard/           # Streamlit application for interactive results
-└── requirements.txt     # Dependency management
-
----
-
-## Data Architecture: Unified Format v2
-
-The core design principle of this project is **interpretive neutrality**. We do not force static pillars onto dynamic events.
-
-### Record Interpretation Rules
-
-| Record Type | Category Column | Pillar Column |
-| :--- | :--- | :--- |
-| **Observation** | Empty | **Required**: The dimension being measured (Access, Usage, etc.) |
-| **Target** | Empty | **Required**: The dimension targeted by policy. |
-| **Event** | **Event Type**: (policy, product_launch, e.t.c.) | **Empty**: Prevents interpretive bias. |
-| **Impact Link** | Empty | **Required**: Inherited from the affected indicator. |
-
-### How Modeling Works
-
-Instead of tagging a "Telebirr Launch" as only `USAGE`, we leave the event neutral and use `impact_link` records to map its effects across multiple dimensions simultaneously (e.g., Access and Usage).
-
----
+│   ├── raw/             # Primary survey data and reference codes
+│   └── processed/       # Sanitized, enriched, and modeled datasets
+├── notebooks/           # Research, event modeling, and forecasting logic
+├── reports/             # Formal analytical assessments and visualization assets
+├── dashboard/           # High-end interactive Streamlit interface
+├── src/                 # Reusable utility scripts
+└── requirements.txt     # System dependencies
 ```
 
 ---
 
-## Evolution Pathway
+## The Analytical Core: Event Impact Modeling
 
-### Phase 0: Initialization
-- Established the core repository structure and environment.
-- Configured dependencies for data science and visualization (Pandas, Seaborn, Matplotlib).
-- Initialized version control with a descriptive branching strategy.
+At the heart of this project is a shift from static measurement to dynamic simulation. We utilize a Unified Data Format that decouples market events from static indicators, allowing for multi-dimensional impact analysis.
 
-### Phase 1: Data Discovery & Enrichment (Current)
-- **Deep Exploration**: Analyzed the unified data schema across three dimensions (Observations, Events, Targets).
-- **Data Standardization**: Migrated legacy formats into version-control-friendly CSVs.
-- **Strategic Enrichment**: Injected high-confidence data points including Findex historical baselines and 2024 mobile operator benchmarks.
-- **Relational Modeling**: Established `impact_links` to programmatically connect market events to metric trajectories.
+- **Record Interpretation**: Observations and Targets define the measurable landscape, while Events represent discrete market disruptions.
+- **Relational Links**: Impact Link records establish causal connections between events (e.g., Safaricom Launch) and their quantitative effects on indicators (e.g., 4G Coverage, Account Ownership).
+- **Forecasting Engine**: A regression-based trend analysis augmented with cumulative event impacts, providing three distinct scenarios (Base, Optimistic, Pessimistic) through 2027.
 
 ---
 
-## Quick Start
+## Interactive Intelligence Dashboard
+
+The project includes a premium Streamlit interface designed for executive decision-makers. It provides a real-time window into the analysis through four specialized modules:
+
+- **Executive Overview**: Real-time status of critical KPIs and progress toward official 2025/2027 targets.
+- **Historical Trend Explorer**: Multidimensional filtering of 10+ indicators across Access, Usage, and Infrastructure.
+- **2027 Projections**: Scenario-based simulation tool identifying the roadmap to universal financial access.
+- **Policy Impact Matrix**: A quantitative evidence matrix mapping reforms to inclusion outcomes with calibrated confidence scores.
+
+---
+
+## Installation and Execution
 
 ### Prerequisites
-- Python 3.10 or higher
-- Git
+- Python 3.10+
+- Virtual Environment (recommended)
 
-### Setup
+### Environment Setup
 1. Clone the repository:
    ```bash
    git clone https://github.com/Leul4ever/Ethio-Finance-forecast.git
+   cd Ethio-Finance-forecast
    ```
-2. Create and activate a virtual environment:
+2. Initialize and activate the environment:
    ```bash
    python -m venv .venv
-   source .venv/Scripts/activate  # Windows
+   source .venv/Scripts/activate  # Windows: .venv\Scripts\activate
    ```
-3. Install dependencies:
+3. Install required libraries:
    ```bash
    pip install -r requirements.txt
    ```
 
-## 🚀 Financial Inclusion Dashboard
-
-A premium, interactive dashboard built with **Streamlit** and **Plotly** to visualize Ethiopia's financial inclusion trajectories (2011-2027).
-
-### How to Run
-1. Ensure all dependencies are installed: `pip install -r requirements.txt`
-2. Launch the dashboard from the project root:
+### Running the System
+1. **Data Restoration**: Prepare the processed data files required for the interactive modules:
+   ```bash
+   python restore_dashboard_data.py
+   ```
+2. **Launch Dashboard**: Start the interactive analytics interface:
    ```bash
    streamlit run dashboard/app.py
    ```
 
-### Dashboard Features
-- **Executive Overview**: High-level KPIs and progress tracking.
-- **Trend Explorer**: Multifilter time-series analyzer for 10+ indicators.
-- **Forecast Simulator**: Interactive 2025-2027 projections with scenario switching (Optimistic/Base/Pessimistic).
-- **Impact Matrix**: Quantitative evidence and confidence scores for policy reforms.
+---
+
+## Project Roadmap
+
+- **Task 1: Data Discovery & Enrichment**: Completed. Established unified schema and high-confidence baselines.
+- **Task 2: Exploratory Data Analysis**: Completed. Identified core growth drivers and gender disparity gaps.
+- **Task 3: Event Impact Modeling**: Completed. Quantified causal links and lag effects for major policy reforms.
+- **Task 4: Forecasting & Simulation**: Completed. Generated 2025-2027 projections with uncertainty quantification.
+- **Task 5: Dashboard Development**: Completed. Implemented a premium, multi-page visualization suite.
 
 ---
 
-## Roadmap
-
-- ✅ **Task 1**: Data Discovery & Enrichment - COMPLETED
-- ✅ **Task 2**: Exploratory Data Analysis (EDA) - COMPLETED
-  - Comprehensive analysis of 50 unified data points
-  - Identified 15% gender gap and +3pp growth slowdown puzzle
-  - Generated 5 testable hypotheses for impact modeling
-  - Full report: `reports/task2.md`
-- ✅ **Task 3**: Impact Modeling & Hypothesis Testing - COMPLETED
-- ✅ **Task 4**: Forecasting & Simulation - COMPLETED
-- ✅ **Task 5**: Policy Recommendations & Dashboard - COMPLETED
-
----
-
-## Contributors
-**Project Lead**: Leul
-**AI Assistant**: Antigravity (Google DeepMind)
+## Acknowledgments
+- **Project Lead**: Leul
+- **Methodology**: Inspired by the National Financial Inclusion Strategy (NFIS II)
+- **Engineered by**: Antigravity (Google DeepMind)
