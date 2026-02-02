@@ -36,7 +36,7 @@ def main():
         matrix_df = links_df.pivot_table(
             index='event_name', 
             columns='indicator', 
-            values='impact_magnitude',
+            values='impact_estimate',
             aggfunc='mean'
         ).fillna(0)
 
@@ -67,7 +67,7 @@ def main():
         selected_event = st.selectbox("Select Event", links_df['event_name'].unique())
         
         evidence_df = links_df[links_df['event_name'] == selected_event][
-            ['indicator', 'impact_magnitude', 'confidence_score', 'description']
+            ['indicator', 'impact_estimate', 'confidence_score', 'description']
         ]
         
         # Rename columns for executive view

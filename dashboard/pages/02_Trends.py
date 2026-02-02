@@ -19,7 +19,11 @@ st.markdown("""
 
 def load_data():
     if os.path.exists("data/processed/unified_inclusion_data.csv"):
-        return pd.read_csv("data/processed/unified_inclusion_data.csv")
+        df = pd.read_csv("data/processed/unified_inclusion_data.csv")
+        # Defensive Casting
+        df['year'] = pd.to_numeric(df['year'], errors='coerce')
+        df['value'] = pd.to_numeric(df['value'], errors='coerce')
+        return df.dropna(subset=['year', 'value'])
     return None
 
 def main():
