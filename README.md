@@ -16,13 +16,34 @@ The project is structured to ensure scalability, reproducibility, and clarity in
 
 ```text
 ├── data/
-│   ├── raw/             # Original datasets and reference codes
-│   └── processed/       # Sanitized and enriched data for modeling
-├── notebooks/           # Experimental analysis and task-specific discovery
-├── src/                 # Modular Python scripts for data processing and enrichment
+│   ├── raw/             # Original datasets (local-only)
+│   └── processed/       # Sanitized and enriched data
+├── notebooks/           # Experimental analysis and discovery
+├── src/                 # Modular Python scripts for data processing
 ├── reports/             # Formal documentation and visualization assets
 ├── dashboard/           # Streamlit application for interactive results
 └── requirements.txt     # Dependency management
+
+---
+
+## Data Architecture: Unified Format v2
+
+The core design principle of this project is **interpretive neutrality**. We do not force static pillars onto dynamic events.
+
+### Record Interpretation Rules
+
+| Record Type | Category Column | Pillar Column |
+| :--- | :--- | :--- |
+| **Observation** | Empty | **Required**: The dimension being measured (Access, Usage, etc.) |
+| **Target** | Empty | **Required**: The dimension targeted by policy. |
+| **Event** | **Event Type**: (policy, product_launch, e.t.c.) | **Empty**: Prevents interpretive bias. |
+| **Impact Link** | Empty | **Required**: Inherited from the affected indicator. |
+
+### How Modeling Works
+
+Instead of tagging a "Telebirr Launch" as only `USAGE`, we leave the event neutral and use `impact_link` records to map its effects across multiple dimensions simultaneously (e.g., Access and Usage).
+
+---
 ```
 
 ---
@@ -67,9 +88,15 @@ The project is structured to ensure scalability, reproducibility, and clarity in
 
 ## Roadmap
 
-- **Task 2**: Exploratory Data Analysis (EDA) - Deep dive into trends and correlations.
-- **Task 3**: Baseline Modeling - Time-series forecasting for key indicators.
-- **Task 4**: Simulation & Policy Analysis - Impact assessment of Digital ID and Mobile Money.
+- ✅ **Task 1**: Data Discovery & Enrichment - COMPLETED
+- ✅ **Task 2**: Exploratory Data Analysis (EDA) - COMPLETED
+  - Comprehensive analysis of 50 unified data points
+  - Identified 15% gender gap and +3pp growth slowdown puzzle
+  - Generated 5 testable hypotheses for impact modeling
+  - Full report: `reports/task2.md`
+- **Task 3**: Impact Modeling & Hypothesis Testing - IN PROGRESS
+- **Task 4**: Forecasting & Simulation - PLANNED
+- **Task 5**: Policy Recommendations & Dashboard - PLANNED
 
 ---
 
